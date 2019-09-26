@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
+//import { request } from 'http';
 
 @Component({
   selector: 'app-jobs-list',
@@ -11,16 +12,27 @@ export class JobsListComponent implements OnInit {
 
 private apiURL = 'http://localhost:3000/jobs'
   constructor(private http: HttpClient) {
-    var resp = this.http.get(this.apiURL)
-    .subscribe((Response) => {return Response})
+   this.getData();
+    
+  }
+
+getData() {
+  return this.http.get(this.apiURL).subscribe(
+    data =>{
+      console.log(data)
+      return data;
+    },
+    err => {
+      return err
+    }
+  )
     
   }
   
       
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/jobs')
-      .subscribe((response)=> {return response})
+    
   }
 
 }

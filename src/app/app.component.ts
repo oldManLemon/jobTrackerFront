@@ -14,17 +14,17 @@ export class AppComponent {
 
   private apiURL = 'http://localhost:3000/jobs';
   data: any ={};
-  constructor(private http: HttpClient){
-    //console.log('inside constructor');
-    this.http.get(this.apiURL).subscribe(
-      value =>{
-        console.log('sucess')
-      },
-      error => {
-        console.log('Error')
-      }
-    )
-  }
+  // constructor(private http: HttpClient){
+  //   //console.log('inside constructor');
+  //   this.http.get(this.apiURL).subscribe(
+  //     value =>{
+  //       console.log('sucess')
+  //     },
+  //     error => {
+  //       console.log('Error')
+  //     }
+  //   )
+  // }
 
  
   ngOnInit(){
